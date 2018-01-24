@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5503339BA918139C5A1F879A /* Pods_ForaSoftEvaluationTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537508EB530A9D7297A248A7 /* Pods_ForaSoftEvaluationTest.framework */; };
+		8365A59E20189DBC0011FACA /* AlbumDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365A59D20189DBC0011FACA /* AlbumDetailTableVC.swift */; };
+		839CA9DF201516FD00930C68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CA9DE201516FD00930C68 /* AppDelegate.swift */; };
+		839CA9E4201516FD00930C68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839CA9E2201516FD00930C68 /* Main.storyboard */; };
+		839CA9E6201516FD00930C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839CA9E5201516FD00930C68 /* Assets.xcassets */; };
+		839CA9E9201516FD00930C68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839CA9E7201516FD00930C68 /* LaunchScreen.storyboard */; };
+		839CA9F12015552600930C68 /* AlbumCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CA9F02015552600930C68 /* AlbumCollectionVC.swift */; };
+		83E65A0B2017A01D003078AE /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E65A0A2017A01D003078AE /* AlbumCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		537508EB530A9D7297A248A7 /* Pods_ForaSoftEvaluationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForaSoftEvaluationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8365A59D20189DBC0011FACA /* AlbumDetailTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumDetailTableVC.swift; path = Controllers/AlbumDetailTableVC.swift; sourceTree = "<group>"; };
+		839CA9DB201516FD00930C68 /* ForaSoftEvaluationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForaSoftEvaluationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		839CA9DE201516FD00930C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		839CA9E3201516FD00930C68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		839CA9E5201516FD00930C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		839CA9E8201516FD00930C68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		839CA9EA201516FD00930C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		839CA9F02015552600930C68 /* AlbumCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumCollectionVC.swift; path = Controllers/AlbumCollectionVC.swift; sourceTree = "<group>"; };
+		83E65A0A2017A01D003078AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumCell.swift; path = Model/AlbumCell.swift; sourceTree = "<group>"; };
+		B75494EA3830474F1EF1FAF3 /* Pods-ForaSoftEvaluationTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForaSoftEvaluationTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForaSoftEvaluationTest/Pods-ForaSoftEvaluationTest.release.xcconfig"; sourceTree = "<group>"; };
+		D3F0B314065420CD84049548 /* Pods-ForaSoftEvaluationTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForaSoftEvaluationTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForaSoftEvaluationTest/Pods-ForaSoftEvaluationTest.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		839CA9D8201516FD00930C68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5503339BA918139C5A1F879A /* Pods_ForaSoftEvaluationTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		839CA9D2201516FD00930C68 = {
+			isa = PBXGroup;
+			children = (
+				839CA9DD201516FD00930C68 /* ForaSoftEvaluationTest */,
+				839CA9DC201516FD00930C68 /* Products */,
+				96DD372BC51E6DABF714B915 /* Pods */,
+				DD265C3A51224D00500E50DA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		839CA9DC201516FD00930C68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				839CA9DB201516FD00930C68 /* ForaSoftEvaluationTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		839CA9DD201516FD00930C68 /* ForaSoftEvaluationTest */ = {
+			isa = PBXGroup;
+			children = (
+				839CA9E2201516FD00930C68 /* Main.storyboard */,
+				83E65A0C2017A03A003078AE /* Model */,
+				839CA9F22015552D00930C68 /* Controllers */,
+				83E65A0D2017B378003078AE /* Helpers */,
+			);
+			path = ForaSoftEvaluationTest;
+			sourceTree = "<group>";
+		};
+		839CA9F22015552D00930C68 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				839CA9F02015552600930C68 /* AlbumCollectionVC.swift */,
+				8365A59D20189DBC0011FACA /* AlbumDetailTableVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		83E65A0C2017A03A003078AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83E65A0A2017A01D003078AE /* AlbumCell.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		83E65A0D2017B378003078AE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				839CA9DE201516FD00930C68 /* AppDelegate.swift */,
+				839CA9E5201516FD00930C68 /* Assets.xcassets */,
+				839CA9E7201516FD00930C68 /* LaunchScreen.storyboard */,
+				839CA9EA201516FD00930C68 /* Info.plist */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		96DD372BC51E6DABF714B915 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3F0B314065420CD84049548 /* Pods-ForaSoftEvaluationTest.debug.xcconfig */,
+				B75494EA3830474F1EF1FAF3 /* Pods-ForaSoftEvaluationTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DD265C3A51224D00500E50DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				537508EB530A9D7297A248A7 /* Pods_ForaSoftEvaluationTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		839CA9DA201516FD00930C68 /* ForaSoftEvaluationTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 839CA9ED201516FD00930C68 /* Build configuration list for PBXNativeTarget "ForaSoftEvaluationTest" */;
+			buildPhases = (
+				EB021036E20015CAAC088984 /* [CP] Check Pods Manifest.lock */,
+				839CA9D7201516FD00930C68 /* Sources */,
+				839CA9D8201516FD00930C68 /* Frameworks */,
+				839CA9D9201516FD00930C68 /* Resources */,
+				1AF495F625C6153F1CD795E9 /* [CP] Embed Pods Frameworks */,
+				070607C5407A6241021CA941 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ForaSoftEvaluationTest;
+			productName = ForaSoftEvaluationTest;
+			productReference = 839CA9DB201516FD00930C68 /* ForaSoftEvaluationTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		839CA9D3201516FD00930C68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "@Danil";
+				TargetAttributes = {
+					839CA9DA201516FD00930C68 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NT3Q29257K;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 839CA9D6201516FD00930C68 /* Build configuration list for PBXProject "ForaSoftEvaluationTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 839CA9D2201516FD00930C68;
+			productRefGroup = 839CA9DC201516FD00930C68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				839CA9DA201516FD00930C68 /* ForaSoftEvaluationTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		839CA9D9201516FD00930C68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				839CA9E9201516FD00930C68 /* LaunchScreen.storyboard in Resources */,
+				839CA9E6201516FD00930C68 /* Assets.xcassets in Resources */,
+				839CA9E4201516FD00930C68 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		070607C5407A6241021CA941 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForaSoftEvaluationTest/Pods-ForaSoftEvaluationTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AF495F625C6153F1CD795E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ForaSoftEvaluationTest/Pods-ForaSoftEvaluationTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForaSoftEvaluationTest/Pods-ForaSoftEvaluationTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB021036E20015CAAC088984 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ForaSoftEvaluationTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		839CA9D7201516FD00930C68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8365A59E20189DBC0011FACA /* AlbumDetailTableVC.swift in Sources */,
+				839CA9F12015552600930C68 /* AlbumCollectionVC.swift in Sources */,
+				839CA9DF201516FD00930C68 /* AppDelegate.swift in Sources */,
+				83E65A0B2017A01D003078AE /* AlbumCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		839CA9E2201516FD00930C68 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839CA9E3201516FD00930C68 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		839CA9E7201516FD00930C68 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839CA9E8201516FD00930C68 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		839CA9EB201516FD00930C68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		839CA9EC201516FD00930C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		839CA9EE201516FD00930C68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3F0B314065420CD84049548 /* Pods-ForaSoftEvaluationTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NT3Q29257K;
+				INFOPLIST_FILE = ForaSoftEvaluationTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danil.ForaSoftEvaluationTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		839CA9EF201516FD00930C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B75494EA3830474F1EF1FAF3 /* Pods-ForaSoftEvaluationTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NT3Q29257K;
+				INFOPLIST_FILE = ForaSoftEvaluationTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danil.ForaSoftEvaluationTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		839CA9D6201516FD00930C68 /* Build configuration list for PBXProject "ForaSoftEvaluationTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				839CA9EB201516FD00930C68 /* Debug */,
+				839CA9EC201516FD00930C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		839CA9ED201516FD00930C68 /* Build configuration list for PBXNativeTarget "ForaSoftEvaluationTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				839CA9EE201516FD00930C68 /* Debug */,
+				839CA9EF201516FD00930C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 839CA9D3201516FD00930C68 /* Project object */;
+}
