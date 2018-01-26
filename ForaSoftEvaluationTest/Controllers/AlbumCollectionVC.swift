@@ -12,6 +12,8 @@ import Alamofire
 private let reuseIdentifier = "AlbumCell"
 
 class AlbumCollectionVC: UICollectionViewController {
+    
+    var artBook:[String]? = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +30,93 @@ class AlbumCollectionVC: UICollectionViewController {
 //            (_, _, data, _) in
 //            print(data)
 //        }
+        
+     //    https://itunes.apple.com/search?term=jack+johnson
+        
+        Alamofire.request("https://itunes.apple.com/search?term=jack+johnson").responseJSON(){(data) in
+            
+            
+            //print(data)
+            
+            var json:Data? = nil
+            
+            if let result =  data.data {
+                let tempJson = result as! Data
+                
+               // print("Test sest test data json")
+               // print(tempJson)
+                
+                json = tempJson
+            }
+            
+                
+                
+                var links = [String]()
+                
+                do {
+                    if let data = json,
+                        let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                        let blogs = json["results"] as? [[String: Any]] {
+                        for blog in blogs {
+                            if let url = blog["artworkUrl60"] as? String {
+                                links.append(url)
+                                
+                            }
+                        }
+                    }
+                } catch {
+                    print("Error deserializing JSON: \(error)")
+                }
+                print("Try to parse json for image urls")
+                print(links)
+            
+            self.artBook = links
+            
+            print("links count = \(links.count)")
+            
+            self.collectionView?.reloadData()
+
+                
+            
+            
+
+//
+            
+
+
+
+        
+            
+        
+        }
     }
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        
+//        let data:Data? = nil
+//
+//        var names = [String]()
+//        
+//        do {
+//            if let data = data,
+//                let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+//                let blogs = json["blogs"] as? [[String: Any]] {
+//                for blog in blogs {
+//                    if let name = blog["name"] as? String {
+//                        names.append(name)
+//                    }
+//                }
+//            }
+//        } catch {
+//            print("Error deserializing JSON: \(error)")
+//        }
+//        
+//        print(names)
     }
 
     /*
@@ -55,7 +139,10 @@ class AlbumCollectionVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 66
+        
+        print("count of rows = ")
+        print(self.artBook?.count)
+        return (self.artBook?.count)!
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,8 +154,20 @@ class AlbumCollectionVC: UICollectionViewController {
     
         // Configure the cell
         
+        let imageURL = self.artBook?[indexPath.row]
+        Alamofire.request(imageURL!).responseJSON(){(data) in
+    
+    let tempData = data.data as! Data
+
+            let image = UIImage(data: tempData)
+            cell3.albumImageView.image = image
+        }
+
+        
         
         cell.backgroundColor = UIColor.red
+        
+        //self.collectionView?.reloadData()
     
         return cell3
     }
