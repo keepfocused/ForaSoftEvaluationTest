@@ -14,6 +14,8 @@ private let reuseIdentifier = "AlbumCell"
 class AlbumCollectionVC: UICollectionViewController {
     
     var artBook:[String]? = []
+    var artistNames:[String]? = []
+    var albumNames:[String]? = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +33,19 @@ class AlbumCollectionVC: UICollectionViewController {
 //            print(data)
 //        }
         
-     //    https://itunes.apple.com/search?term=jack+johnson
+     //    https://itunes.apple.com/lookup?amgArtistId=468749,5723&entity=album&limit=50
         
-        Alamofire.request("https://itunes.apple.com/search?term=jack+johnson").responseJSON(){(data) in
+        //search album by text
+//        Alamofire.request("https://itunes.apple.com/search?term=TEXT&attribute=albumTerm").responseJSON(){(data) in
+        
+        
+        
+        //golden hit best top platinum Heart & Soul  Love you  My hot dream Feel American life
+
+        Alamofire.request("https://itunes.apple.com/lookup?amgArtistId=468749,5723&entity=album&limit=50").responseJSON(){(data) in
+        
             
-            
-            //print(data)
+        //    print(data)
             
             var json:Data? = nil
             
@@ -49,17 +58,27 @@ class AlbumCollectionVC: UICollectionViewController {
                 json = tempJson
             }
             
+                //Поменять на оператор свитч, изменить имя переменной блогс
                 
-                
-                var links = [String]()
+                var artbookImageURLArray = [String]()
+                var artistNames = [String]()
+                var albumNames = [String]()
                 
                 do {
                     if let data = json,
                         let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
                         let blogs = json["results"] as? [[String: Any]] {
                         for blog in blogs {
-                            if let url = blog["artworkUrl60"] as? String {
-                                links.append(url)
+                            if let url = blog["artworkUrl100"] as? String {
+                                artbookImageURLArray.append(url)
+                                
+                            }
+                            if let artistName = blog["artistName"] as? String {
+                                artistNames.append(artistName)
+                                
+                            }
+                            if let albumName = blog["collectionName"] as? String {
+                                albumNames.append(albumName)
                                 
                             }
                         }
@@ -68,11 +87,13 @@ class AlbumCollectionVC: UICollectionViewController {
                     print("Error deserializing JSON: \(error)")
                 }
                 print("Try to parse json for image urls")
-                print(links)
+                print(artbookImageURLArray)
             
-            self.artBook = links
+            self.artBook = artbookImageURLArray
+            self.artistNames = artistNames
+            self.albumNames = albumNames
             
-            print("links count = \(links.count)")
+            print("links count = \(artbookImageURLArray.count)")
             
             self.collectionView?.reloadData()
 
@@ -162,6 +183,9 @@ class AlbumCollectionVC: UICollectionViewController {
             let image = UIImage(data: tempData)
             cell3.albumImageView.image = image
         }
+        
+        cell3.albumNameLabel.text = self.albumNames?[indexPath.row]
+        cell3.artisNameLabel.text = self.artistNames?[indexPath.row]
 
         
         
@@ -199,9 +223,21 @@ class AlbumCollectionVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+     
+     albumDetailInfo
     
     }
     */
+    
+    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+        
+        let segueIdentifier = "albumDetailInfo"
+        
+        performSegue(withIdentifier: segueIdentifier, sender: nil)
+        
+
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

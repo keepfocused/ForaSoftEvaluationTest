@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class AlbumDetailTableVC: UITableViewController {
+    
+    //https://itunes.apple.com/us/album/in-between-dreams/879273552?uo=4
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -19,6 +24,25 @@ class AlbumDetailTableVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //879273552
+        //&entity=album"
+        Alamofire.request("https://itunes.apple.com/lookup?id=879273552&entity=song").responseJSON(){(data) in
+            
+            print("Album detailed data Album detailed data Album detailed data Album detailed data ")
+            print(data)
+            
+            var json:Data? = nil
+            
+            if let result =  data.data {
+                let tempJson = result as! Data
+                
+                // print("Test sest test data json")
+                 print(tempJson)
+                
+                json = tempJson
+            }
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
