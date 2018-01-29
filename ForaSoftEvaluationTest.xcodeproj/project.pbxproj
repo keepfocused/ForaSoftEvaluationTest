@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5503339BA918139C5A1F879A /* Pods_ForaSoftEvaluationTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537508EB530A9D7297A248A7 /* Pods_ForaSoftEvaluationTest.framework */; };
+		830FEFEE201FB38700CA0D2E /* albumBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830FEFED201FB38700CA0D2E /* albumBasicInfo.swift */; };
 		8365A59E20189DBC0011FACA /* AlbumDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365A59D20189DBC0011FACA /* AlbumDetailTableVC.swift */; };
 		839CA9DF201516FD00930C68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CA9DE201516FD00930C68 /* AppDelegate.swift */; };
 		839CA9E4201516FD00930C68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839CA9E2201516FD00930C68 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		537508EB530A9D7297A248A7 /* Pods_ForaSoftEvaluationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForaSoftEvaluationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		830FEFED201FB38700CA0D2E /* albumBasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = albumBasicInfo.swift; path = Model/albumBasicInfo.swift; sourceTree = "<group>"; };
 		8365A59D20189DBC0011FACA /* AlbumDetailTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumDetailTableVC.swift; path = Controllers/AlbumDetailTableVC.swift; sourceTree = "<group>"; };
 		839CA9DB201516FD00930C68 /* ForaSoftEvaluationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForaSoftEvaluationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		839CA9DE201516FD00930C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				83D0430A201F3FC70036EAC5 /* albumDetailInfo.swift */,
 				83D0430C201F412C0036EAC5 /* singleTrack.swift */,
+				830FEFED201FB38700CA0D2E /* albumBasicInfo.swift */,
 				83D04308201E745E0036EAC5 /* Cells */,
 			);
 			name = Model;
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83D0430B201F3FC70036EAC5 /* albumDetailInfo.swift in Sources */,
+				830FEFEE201FB38700CA0D2E /* albumBasicInfo.swift in Sources */,
 				83D0430D201F412C0036EAC5 /* singleTrack.swift in Sources */,
 				83D0430F201F41E70036EAC5 /* NetworkManager.swift in Sources */,
 				83D04303201E74070036EAC5 /* AlbumImageCell.swift in Sources */,

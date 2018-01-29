@@ -13,41 +13,31 @@ import Alamofire
 
 class AlbumCollectionVC: UICollectionViewController {
     
-   private var artBook = [String]()
-   private var artistNames = [String]()
-   private var albumNames = [String]()
-   private var albumsID = [String]()
-   private let reuseIdentifier = "AlbumCell"
-   private var selectedCell = 0
+    private var albumsDataCollection = [albumBasicInfo]()
+    
+    
+    private let reuseIdentifier = "AlbumCell"
+    private var selectedCell = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-     //    https://itunes.apple.com/lookup?amgArtistId=468749,5723&entity=album&limit=50
-        
-        //search album by text
-//        Alamofire.request("https://itunes.apple.com/search?term=TEXT&attribute=albumTerm").responseJSON(){(data) in
-        
-        
-        
-        //golden hit best top platinum Heart & Soul  Love you  My hot dream Feel American life
-
         Alamofire.request("https://itunes.apple.com/lookup?amgArtistId=468749,5723&entity=album&limit=50").responseJSON(){(data) in
-        
             
-        //    print(data)
+            
+            //print(data)
             
             var json:Data? = nil
             
             //if let result =  data.data {
-               // let tempJson = result as! Data
-                
-               // print("Test sest test data json")
-               // print(tempJson)
-                
-             //   json = tempJson
-           // }
+            // let tempJson = result as! Data
+            
+            // print("Test sest test data json")
+            // print(tempJson)
+            
+            //   json = tempJson
+            // }
             let tempData = data.data
             
             json = tempData
@@ -57,24 +47,25 @@ class AlbumCollectionVC: UICollectionViewController {
                 do {
                     if let data = json,
                         let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                        let blogs = json["results"] as? [[String: Any]] {
-                        for blog in blogs {
-                            if let url = blog["artworkUrl100"] as? String {
-                                self.artBook.append(url)
+                        let attributes = json["results"] as? [[String: Any]] {
+                        for attribute in attributes {
+                            
+                            var basicAlbumData = albumBasicInfo()
+                            
+                            if let imageURL = attribute["artworkUrl100"] as? String {
+                                basicAlbumData.artBookURL = imageURL
+                            }
+                            if let artistName = attribute["artistName"] as? String {
+                                basicAlbumData.artistName = artistName
                                 
                             }
-                            if let artistName = blog["artistName"] as? String {
-                                self.artistNames.append(artistName)
-                                
+                            if let albumName = attribute["collectionName"] as? String {
+                                basicAlbumData.albumName = albumName
                             }
-                            if let albumName = blog["collectionName"] as? String {
-                                self.albumNames.append(albumName)
+                            if let albumId = attribute["artistId"] as? Int {
+                                basicAlbumData.albumID = albumID
                             }
-                            if let albumId = blog["artistId"] as? Int {
-                                self.albumsID.append(String(albumId))
-                                //print("AAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-                              //  print("album id = \(albumId)")
-                            }
+                            self.
                         }
                     }
                 } catch {
@@ -116,7 +107,7 @@ class AlbumCollectionVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         
-        print("count of rows = ")
+
         print(self.artBook.count)
         return (self.artBook.count)
     }
@@ -133,7 +124,7 @@ class AlbumCollectionVC: UICollectionViewController {
         let imageURL = self.artBook[indexPath.row]
         Alamofire.request(imageURL).responseJSON(){(data) in
     
-    let tempData = data.data as! Data
+    let tempData = data.data!
 
             let image = UIImage(data: tempData)
             cell3.albumImageView.image = image

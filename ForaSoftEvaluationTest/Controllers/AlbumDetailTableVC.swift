@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class AlbumDetailvarleVC: UITableViewController {
+class AlbumDetailTableVC: UITableViewController {
     
     //https://itunes.apple.com/us/album/in-between-dreams/879273552?uo=4
     
@@ -58,15 +58,15 @@ class AlbumDetailvarleVC: UITableViewController {
                 let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
                 let blogs = json["results"] as? [[String: Any]] {
                 for blog in blogs {
-                    var singleTrack:singleTrack
+                    var track:singleTrack = singleTrack(trackName: "", trackLength: "")
                     if let trackName = blog["trackName"] as? String {
                         //self.songs.append(trackName)
-                        singleTrack.trackName = trackName
+                        track.trackName = trackName
                     }
                     if let trackLength = blog["trackTimeMillis"] as? String {
-                        singleTrack.trackLength = trackLength
+                        track.trackLength = trackLength
                     }
-                    self.songs.append(singleTrack)
+                    self.songs.append(track)
                     
        
                 }
@@ -126,38 +126,37 @@ class AlbumDetailvarleVC: UITableViewController {
         default:
             return 0
         }
-        
-
-       
-        
     }
+    
+   private let  albumImageIdentifier =  "albumImage"
+   private let albumInfoIdentifier =    "albumInfo"
+   private let songIdentifier =         "song"
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
-        let albumImageIdentifier = "albumImage"
-        let albumInfoIdentifier = "albumInfo"
-        let songIdentifier = "song"
+ 
         
         //albumImage    albumInfo   song
         
         switch indexPath.section {
         case 0:
-            let albumCell = tableView.dequeueReusableCell(withIdentifier: albumImageIdentifier, for: indexPath) as! AlbumImageCell
+            let albumCell = tableView.dequeueReusableCell(withIdentifier: self.albumImageIdentifier, for: indexPath) as! AlbumImageCell
            // albumCell.backgor
             return albumCell
 
            
         case 1:
-            let detailCell = tableView.dequeueReusableCell(withIdentifier: albumInfoIdentifier, for: indexPath) as! AlbumDetailCell
+            let detailCell = tableView.dequeueReusableCell(withIdentifier: self.albumInfoIdentifier, for: indexPath) as! AlbumDetailCell
             return detailCell
 
             
         case 2:
-            let songCell = tableView.dequeueReusableCell(withIdentifier: songIdentifier, for: indexPath) as! songCell
+            let songCell = tableView.dequeueReusableCell(withIdentifier: self.songIdentifier, for: indexPath) as! songCell
             let track = self.songs[indexPath.row]
-            songCell.textLabel?.text = track.trackName
+            songCell.trackNameLabel?.text = track.trackName
+            songCell.numberOfTrackLabel.text = String(indexPath.row + 1)
             return songCell
 
             
@@ -171,50 +170,22 @@ class AlbumDetailvarleVC: UITableViewController {
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch indexPath.section {
+        case 0:
+            return 200
+        case 1:
+            return 228
+        case 2:
+            return 50
+        default:
+            break
+        }
+        return 1
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class singleTrack: NSObject {
-    public var trackName = ""
-    public var trackLength = ""
+struct singleTrack {
+    
+   public var trackName:String
+   public var trackLength:String
 }
