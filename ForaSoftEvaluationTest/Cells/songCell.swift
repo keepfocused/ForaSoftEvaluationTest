@@ -20,4 +20,8 @@ class songCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBOutlet weak var numberOfTrackLabel: UILabel!
+    
+    @IBOutlet weak var trackNameLabel: UILabel!
 }

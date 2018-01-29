@@ -107,7 +107,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumImage" rowHeight="200" id="fg0-kM-6oU" customClass="AlbumImageCell" customModule="ForaSoftEvaluationTest" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumImage" rowHeight="200" id="fg0-kM-6oU" customClass="AlbumImageCell" customModule="ForaSoftEvaluationTest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fg0-kM-6oU" id="YMx-GC-67D">
@@ -124,7 +124,7 @@
                                     <outlet property="albumImageViewOutlet" destination="jdJ-JZ-ekd" id="64c-em-2rA"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumInfo" rowHeight="211" id="yQ0-BU-Cgy" customClass="AlbumDetailCell" customModule="ForaSoftEvaluationTest" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumInfo" rowHeight="211" id="yQ0-BU-Cgy" customClass="AlbumDetailCell" customModule="ForaSoftEvaluationTest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="228" width="375" height="211"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yQ0-BU-Cgy" id="QrC-Dk-cky">
@@ -166,18 +166,29 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="priceLabelOutlet" destination="kCh-rI-bFV" id="Urb-xB-lHe"/>
+                                    <outlet property="albumImageView" destination="KvL-V6-3l5" id="zn3-Yk-O4q"/>
+                                    <outlet property="albumNameLabel" destination="YHc-hf-5KC" id="hX5-bb-K6u"/>
+                                    <outlet property="artistNameLabel" destination="qp1-N3-THb" id="oOM-56-Npn"/>
+                                    <outlet property="genreLabel" destination="rKc-HQ-2d4" id="3QR-wk-peN"/>
+                                    <outlet property="priceLabel" destination="kCh-rI-bFV" id="neT-pm-Abe"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="song" rowHeight="50" id="zdV-VO-pZa" customClass="songCell" customModule="ForaSoftEvaluationTest" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="song" rowHeight="50" id="zdV-VO-pZa" customClass="songCell" customModule="ForaSoftEvaluationTest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="439" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zdV-VO-pZa" id="Hdu-mt-1HS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXj-4x-cJh">
-                                            <rect key="frame" x="37" y="12" width="116" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWa-kE-PwR">
+                                            <rect key="frame" x="8" y="13" width="28" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TrackName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXj-4x-cJh">
+                                            <rect key="frame" x="44" y="10" width="323" height="28"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -185,6 +196,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="numberOfTrackLabel" destination="ZWa-kE-PwR" id="7Cs-xB-IqT"/>
+                                    <outlet property="trackNameLabel" destination="kXj-4x-cJh" id="jN5-Sl-M7e"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

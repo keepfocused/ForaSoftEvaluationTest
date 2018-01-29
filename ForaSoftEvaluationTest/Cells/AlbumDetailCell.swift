@@ -20,7 +20,10 @@ class AlbumDetailCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBOutlet weak var genreLabelOutlet: UILabel!
-    @IBOutlet weak var priceLabelOutlet: UILabel!
-    @IBOutlet weak var tracksCountLabelOutlet: UILabel!
+    
+    @IBOutlet weak var albumImageView: UIImageView!
+    @IBOutlet weak var albumNameLabel: UILabel!
+    @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
 }

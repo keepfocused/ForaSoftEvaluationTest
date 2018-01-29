@@ -9,13 +9,13 @@
 import UIKit
 import Alamofire
 
-class AlbumDetailTableVC: UITableViewController {
+class AlbumDetailvarleVC: UITableViewController {
     
     //https://itunes.apple.com/us/album/in-between-dreams/879273552?uo=4
     
     public var albumId = ""
     
-    var songs = [String]()
+    var songs = [singleTrack]()
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,8 +34,7 @@ class AlbumDetailTableVC: UITableViewController {
         
         Alamofire.request("https://itunes.apple.com/lookup?id=\(self.albumId)&entity=song").responseJSON(){(data) in
             
-            print("oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo")
-            print("Album detailed data Album detailed data Album detailed data Album detailed data ")
+
             print(data)
             
             var json:Data? = nil
@@ -52,19 +51,24 @@ class AlbumDetailTableVC: UITableViewController {
             let tempData = data.data
             json = tempData
 
-
+//collectionName collectionPrice trackTimeMillis
         
         do {
             if let data = json,
                 let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
                 let blogs = json["results"] as? [[String: Any]] {
                 for blog in blogs {
+                    var singleTrack:singleTrack
                     if let trackName = blog["trackName"] as? String {
-                        self.songs.append(trackName)
+                        //self.songs.append(trackName)
+                        singleTrack.trackName = trackName
                     }
-                    if let
+                    if let trackLength = blog["trackTimeMillis"] as? String {
+                        singleTrack.trackLength = trackLength
+                    }
+                    self.songs.append(singleTrack)
                     
-                    
+       
                 }
             }
         } catch {
@@ -75,6 +79,20 @@ class AlbumDetailTableVC: UITableViewController {
         print(self.songs)
             
             self.tableView.reloadData()
+            
+            
+            //                    if let artistName = blog["artistName"] as? String {
+            //
+            //                    }
+            //                    if let artistName = blog["albumName"] as? String {
+            //
+            //                    }
+            //                    if let genre = blog["primaryGenreName"] as? String {
+            //
+            //                    }
+            //                    if let genre = blog["artworkUrl60"] as? String {
+            //                        
+            //                    }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -138,7 +156,8 @@ class AlbumDetailTableVC: UITableViewController {
             
         case 2:
             let songCell = tableView.dequeueReusableCell(withIdentifier: songIdentifier, for: indexPath) as! songCell
-            songCell.textLabel?.text = self.songs[indexPath.row]
+            let track = self.songs[indexPath.row]
+            songCell.textLabel?.text = track.trackName
             return songCell
 
             
