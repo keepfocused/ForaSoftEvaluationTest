@@ -10,10 +10,6 @@ import UIKit
 
 class AlbumCell: UICollectionViewCell {
     
-    var albumName:String = ""
-    var artistName:String = ""
-    var albumImage:UIImage? = nil
-    
     @IBOutlet weak var albumImageView: UIImageView!
     
     @IBOutlet weak var albumNameLabel: UILabel!
