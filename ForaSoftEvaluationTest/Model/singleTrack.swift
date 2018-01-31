@@ -10,6 +10,6 @@ import UIKit
 
 struct singleTrack {
     
-   public var trackName:String
-   public var trackLength:String
+    var trackName = ""
+    var trackLength = ""
 }

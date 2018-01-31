@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="946" y="90"/>
         </scene>
-        <!--iTunes-->
+        <!--Album CollectionVC-->
         <scene sceneID="Hjo-Le-DnJ">
             <objects>
                 <collectionViewController id="DmT-tX-0BC" customClass="AlbumCollectionVC" customModule="ForaSoftEvaluationTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,7 +58,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rp-75-VJj">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Rp-75-VJj">
                                             <rect key="frame" x="0.0" y="166" width="144" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -72,7 +72,7 @@
                                     <outlet property="albumImageView" destination="RJD-hv-6Sx" id="q4W-oS-N8X"/>
                                     <outlet property="albumNameLabel" destination="ltT-Mk-LTr" id="Hhc-x8-TJJ"/>
                                     <outlet property="artisNameLabel" destination="0Rp-75-VJj" id="Wxf-qN-5b8"/>
-                                    <segue destination="g8a-p9-Kgv" kind="show" identifier="albumDetailInfo" id="Em3-3F-kHz"/>
+                                    <segue destination="g8a-p9-Kgv" kind="show" identifier="albumDetailInfo" id="oyC-mS-NYp"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -81,9 +81,9 @@
                             <outlet property="delegate" destination="DmT-tX-0BC" id="kba-Bv-Buj"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="iTunes" id="VNA-zk-lxz"/>
+                    <navigationItem key="navigationItem" id="VNA-zk-lxz"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="67t-Le-yi6" id="eOq-dT-ebH"/>
+                        <outlet property="searchDisplayController" destination="7wB-fw-XbW" id="J5S-uh-JOf"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NE0-cs-Gq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -93,6 +93,14 @@
                         <outlet property="searchContentsController" destination="DmT-tX-0BC" id="JHz-yQ-Kv0"/>
                         <outlet property="searchResultsDataSource" destination="DmT-tX-0BC" id="R3j-T5-kbJ"/>
                         <outlet property="searchResultsDelegate" destination="DmT-tX-0BC" id="MR7-Y5-koJ"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="7wB-fw-XbW">
+                    <connections>
+                        <outlet property="delegate" destination="DmT-tX-0BC" id="1c8-QV-6pW"/>
+                        <outlet property="searchContentsController" destination="DmT-tX-0BC" id="gZh-4e-ACh"/>
+                        <outlet property="searchResultsDataSource" destination="DmT-tX-0BC" id="94Q-xx-E3v"/>
+                        <outlet property="searchResultsDelegate" destination="DmT-tX-0BC" id="RWT-zQ-2BB"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -107,32 +115,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumImage" rowHeight="200" id="fg0-kM-6oU" customClass="AlbumImageCell" customModule="ForaSoftEvaluationTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fg0-kM-6oU" id="YMx-GC-67D">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jdJ-JZ-ekd">
-                                            <rect key="frame" x="0.0" y="-7" width="375" height="203"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="albumImageViewOutlet" destination="jdJ-JZ-ekd" id="64c-em-2rA"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumInfo" rowHeight="211" id="yQ0-BU-Cgy" customClass="AlbumDetailCell" customModule="ForaSoftEvaluationTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="228" width="375" height="211"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="211"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yQ0-BU-Cgy" id="QrC-Dk-cky">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCh-rI-bFV">
-                                            <rect key="frame" x="280" y="163" width="76" height="32"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kCh-rI-bFV">
+                                            <rect key="frame" x="274" y="163" width="93" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -174,7 +165,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="song" rowHeight="50" id="zdV-VO-pZa" customClass="songCell" customModule="ForaSoftEvaluationTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="439" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="239" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zdV-VO-pZa" id="Hdu-mt-1HS">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>

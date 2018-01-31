@@ -10,10 +10,6 @@ import UIKit
 
 class albumDetailInfo: NSObject {
     
-    public var artistName = ""
-    public var albumName = ""
     public var genre = ""
     public var price = ""
-    public var artistImage:UIImageView? = nil
-    public var albumImage:UIImageView? = nil
-}
+    }

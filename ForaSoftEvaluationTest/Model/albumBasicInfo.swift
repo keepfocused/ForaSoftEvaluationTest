@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct albumBasicInfo {
     
      var artBookURL = ""
      var artistName = ""
      var albumName = ""
-     var albumID = ""
-    //var artBookImageView:UI = nil
+     var albumId = ""
+     var artBookImage:UIImage?
 }

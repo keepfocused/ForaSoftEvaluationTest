@@ -11,11 +11,11 @@ import Alamofire
 
 class AlbumDetailTableVC: UITableViewController {
     
-    //https://itunes.apple.com/us/album/in-between-dreams/879273552?uo=4
+    public var basicInfo = albumBasicInfo()
+    private var detailInfo = albumDetailInfo()
     
-    public var albumId = ""
+    private var songs = [singleTrack]()
     
-    var songs = [singleTrack]()
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,74 +31,29 @@ class AlbumDetailTableVC: UITableViewController {
 //        //879273552
 //        //&entity=album"
         
+        let albumId = self.basicInfo.albumId
         
-        Alamofire.request("https://itunes.apple.com/lookup?id=\(self.albumId)&entity=song").responseJSON(){(data) in
+        
+        
+        Alamofire.request("https://itunes.apple.com/lookup?id=\(albumId)&entity=song").responseJSON(){(data) in
             
-
-            print(data)
             
             var json:Data? = nil
             
-//            if let result =  data.data {
-//                let tempJson = result as! Data
-//                
-//                // print("Test sest test data json")
-//               //  print(tempJson)
-//                
-//                json = tempJson
-//            }
-//        }
             let tempData = data.data
+            
             json = tempData
 
-//collectionName collectionPrice trackTimeMillis
-        
-        do {
-            if let data = json,
-                let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                let blogs = json["results"] as? [[String: Any]] {
-                for blog in blogs {
-                    var track:singleTrack = singleTrack(trackName: "", trackLength: "")
-                    if let trackName = blog["trackName"] as? String {
-                        //self.songs.append(trackName)
-                        track.trackName = trackName
-                    }
-                    if let trackLength = blog["trackTimeMillis"] as? String {
-                        track.trackLength = trackLength
-                    }
-                    self.songs.append(track)
-                    
-       
-                }
-            }
-        } catch {
-            print("Error deserializing JSON: ")//\(error)")
-        }
-        
-        print("Try to print songs ")
-        print(self.songs)
             
+            let parser = JSONResponseParser()
+            
+            let (tracksArray, parsedDetailData) = parser.perfromDetailInfoParse(responseData: json)
+            
+            self.songs = tracksArray
+            self.detailInfo = parsedDetailData
+ 
             self.tableView.reloadData()
             
-            
-            //                    if let artistName = blog["artistName"] as? String {
-            //
-            //                    }
-            //                    if let artistName = blog["albumName"] as? String {
-            //
-            //                    }
-            //                    if let genre = blog["primaryGenreName"] as? String {
-            //
-            //                    }
-            //                    if let genre = blog["artworkUrl60"] as? String {
-            //                        
-            //                    }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     }
 
@@ -111,7 +66,7 @@ class AlbumDetailTableVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,8 +75,6 @@ class AlbumDetailTableVC: UITableViewController {
         case 0:
             return 1
         case 1:
-            return 1
-        case 2:
             return self.songs.count
         default:
             return 0
@@ -141,18 +94,19 @@ class AlbumDetailTableVC: UITableViewController {
         //albumImage    albumInfo   song
         
         switch indexPath.section {
-        case 0:
-            let albumCell = tableView.dequeueReusableCell(withIdentifier: self.albumImageIdentifier, for: indexPath) as! AlbumImageCell
-           // albumCell.backgor
-            return albumCell
-
            
-        case 1:
+        case 0:
             let detailCell = tableView.dequeueReusableCell(withIdentifier: self.albumInfoIdentifier, for: indexPath) as! AlbumDetailCell
+            detailCell.albumNameLabel.text = self.basicInfo.albumName
+            detailCell.artistNameLabel.text = self.basicInfo.artistName
+            detailCell.albumImageView.image = self.basicInfo.artBookImage
+            detailCell.priceLabel.text = "price: $ \(self.detailInfo.price)"
+            detailCell.genreLabel.text = self.detailInfo.genre
+            
             return detailCell
 
             
-        case 2:
+        case 1:
             let songCell = tableView.dequeueReusableCell(withIdentifier: self.songIdentifier, for: indexPath) as! songCell
             let track = self.songs[indexPath.row]
             songCell.trackNameLabel?.text = track.trackName
@@ -175,11 +129,10 @@ class AlbumDetailTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch indexPath.section {
+ 
         case 0:
-            return 200
-        case 1:
             return 228
-        case 2:
+        case 1:
             return 50
         default:
             break
