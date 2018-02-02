@@ -17,6 +17,7 @@ class AlbumDetailTableVC: UITableViewController {
     private var songs = [singleTrack]()
     
     
+    //MARK: Life cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,23 +28,12 @@ class AlbumDetailTableVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        //879273552
-//        //&entity=album"
-        
+ 
         let albumId = self.basicInfo.albumId
-        
-        
         
         Alamofire.request("https://itunes.apple.com/lookup?id=\(albumId)&entity=song").responseJSON(){(data) in
             
-            
-            var json:Data? = nil
-            
-            let tempData = data.data
-            
-            json = tempData
-
+            let json:Data? = data.data
             
             let parser = JSONResponseParser()
             
@@ -51,21 +41,17 @@ class AlbumDetailTableVC: UITableViewController {
             
             self.songs = tracksArray
             self.detailInfo = parsedDetailData
- 
+            
             self.tableView.reloadData()
             
-    }
+        }
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 2
     }
 
@@ -87,11 +73,8 @@ class AlbumDetailTableVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        
- 
-        
-        //albumImage    albumInfo   song
+
+        //Configure cell
         
         switch indexPath.section {
            
@@ -112,10 +95,8 @@ class AlbumDetailTableVC: UITableViewController {
             songCell.trackNameLabel?.text = track.trackName
             songCell.numberOfTrackLabel.text = String(indexPath.row + 1)
             return songCell
-
             
         default: break
-            
             
         }
         
@@ -124,7 +105,7 @@ class AlbumDetailTableVC: UITableViewController {
         return cell
     }
     
-    
+    // MARK: Table view delegate
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
