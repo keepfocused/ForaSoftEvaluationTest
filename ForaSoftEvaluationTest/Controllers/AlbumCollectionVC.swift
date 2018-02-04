@@ -155,6 +155,12 @@ class AlbumCollectionVC: UICollectionViewController, UISearchBarDelegate {
     
     // MARK: Network requests
     
+    ///Retrieves initial albums
+    ///
+    /// - Parameters:
+    ///   - artistIdArray: Array of string with iTunes artist ids
+    /// - Returns: Calls overrided setter for self.responseData
+    
     func performGetSomeAlbumsRequest(artistIdArray:Array<String>) {
         
         let artistIdValue = artistIdArray.joined(separator: ",")
@@ -168,6 +174,12 @@ class AlbumCollectionVC: UICollectionViewController, UISearchBarDelegate {
             
         }
     }
+    
+    ///Retrieves albums by search text
+    ///
+    /// - Parameters:
+    ///   - textForSearch: input text in searchbar
+    /// - Returns: Calls overrided setter for self.responseData
     
     func perfromSearchAlbumRequest(textForSearch:String)  {
         
