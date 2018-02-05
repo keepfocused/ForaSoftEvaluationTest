@@ -14,7 +14,6 @@ class JSONResponseParser: NSObject {
     {
         var resultArray = [singleTrack]()
         var resultDetailInfo = albumDetailInfo()
-
         
         do {
             if let data = responseData,
@@ -83,7 +82,10 @@ class JSONResponseParser: NSObject {
         } catch {
             print("Error deserializing JSON: \(error)")
         }
-        return albumsDataCollection
+        
+        let sortedAlbums = albumsDataCollection.sorted{$0.albumName < $1.albumName}
+        
+        return sortedAlbums
         
     }
 }
