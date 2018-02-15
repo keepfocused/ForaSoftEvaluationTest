@@ -8,24 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		5503339BA918139C5A1F879A /* Pods_ForaSoftEvaluationTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537508EB530A9D7297A248A7 /* Pods_ForaSoftEvaluationTest.framework */; };
-		830FEFEE201FB38700CA0D2E /* albumBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830FEFED201FB38700CA0D2E /* albumBasicInfo.swift */; };
+		830FEFEE201FB38700CA0D2E /* AlbumBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830FEFED201FB38700CA0D2E /* AlbumBasicInfo.swift */; };
 		8365A59E20189DBC0011FACA /* AlbumDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365A59D20189DBC0011FACA /* AlbumDetailTableVC.swift */; };
 		839CA9DF201516FD00930C68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CA9DE201516FD00930C68 /* AppDelegate.swift */; };
 		839CA9E4201516FD00930C68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839CA9E2201516FD00930C68 /* Main.storyboard */; };
 		839CA9E6201516FD00930C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839CA9E5201516FD00930C68 /* Assets.xcassets */; };
 		839CA9E9201516FD00930C68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839CA9E7201516FD00930C68 /* LaunchScreen.storyboard */; };
 		839CA9F12015552600930C68 /* AlbumCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CA9F02015552600930C68 /* AlbumCollectionVC.swift */; };
+		83BFD8DA20358C7900CAF97E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFD8D920358C7900CAF97E /* NetworkManager.swift */; };
 		83D04305201E74370036EAC5 /* AlbumDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D04304201E74370036EAC5 /* AlbumDetailCell.swift */; };
-		83D04307201E74530036EAC5 /* songCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D04306201E74530036EAC5 /* songCell.swift */; };
-		83D0430B201F3FC70036EAC5 /* albumDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D0430A201F3FC70036EAC5 /* albumDetailInfo.swift */; };
-		83D0430D201F412C0036EAC5 /* singleTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D0430C201F412C0036EAC5 /* singleTrack.swift */; };
+		83D04307201E74530036EAC5 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D04306201E74530036EAC5 /* SongCell.swift */; };
+		83D0430B201F3FC70036EAC5 /* AlbumDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D0430A201F3FC70036EAC5 /* AlbumDetailInfo.swift */; };
+		83D0430D201F412C0036EAC5 /* SingleTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D0430C201F412C0036EAC5 /* SingleTrack.swift */; };
 		83D04311201F42180036EAC5 /* JSONResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D04310201F42180036EAC5 /* JSONResponseParser.swift */; };
 		83E65A0B2017A01D003078AE /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E65A0A2017A01D003078AE /* AlbumCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		537508EB530A9D7297A248A7 /* Pods_ForaSoftEvaluationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForaSoftEvaluationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		830FEFED201FB38700CA0D2E /* albumBasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = albumBasicInfo.swift; path = Model/albumBasicInfo.swift; sourceTree = "<group>"; };
+		830FEFED201FB38700CA0D2E /* AlbumBasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumBasicInfo.swift; path = Model/AlbumBasicInfo.swift; sourceTree = "<group>"; };
 		8365A59D20189DBC0011FACA /* AlbumDetailTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumDetailTableVC.swift; path = Controllers/AlbumDetailTableVC.swift; sourceTree = "<group>"; };
 		839CA9DB201516FD00930C68 /* ForaSoftEvaluationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForaSoftEvaluationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		839CA9DE201516FD00930C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,10 +35,11 @@
 		839CA9E8201516FD00930C68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		839CA9EA201516FD00930C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		839CA9F02015552600930C68 /* AlbumCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumCollectionVC.swift; path = Controllers/AlbumCollectionVC.swift; sourceTree = "<group>"; };
+		83BFD8D920358C7900CAF97E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = Controllers/NetworkManager.swift; sourceTree = "<group>"; };
 		83D04304201E74370036EAC5 /* AlbumDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumDetailCell.swift; path = Cells/AlbumDetailCell.swift; sourceTree = "<group>"; };
-		83D04306201E74530036EAC5 /* songCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = songCell.swift; path = Cells/songCell.swift; sourceTree = "<group>"; };
-		83D0430A201F3FC70036EAC5 /* albumDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = albumDetailInfo.swift; path = Model/albumDetailInfo.swift; sourceTree = "<group>"; };
-		83D0430C201F412C0036EAC5 /* singleTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = singleTrack.swift; path = Model/singleTrack.swift; sourceTree = "<group>"; };
+		83D04306201E74530036EAC5 /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SongCell.swift; path = Cells/SongCell.swift; sourceTree = "<group>"; };
+		83D0430A201F3FC70036EAC5 /* AlbumDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumDetailInfo.swift; path = Model/AlbumDetailInfo.swift; sourceTree = "<group>"; };
+		83D0430C201F412C0036EAC5 /* SingleTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleTrack.swift; path = Model/SingleTrack.swift; sourceTree = "<group>"; };
 		83D04310201F42180036EAC5 /* JSONResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONResponseParser.swift; path = Controllers/JSONResponseParser.swift; sourceTree = "<group>"; };
 		83E65A0A2017A01D003078AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumCell.swift; path = Model/AlbumCell.swift; sourceTree = "<group>"; };
 		B75494EA3830474F1EF1FAF3 /* Pods-ForaSoftEvaluationTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForaSoftEvaluationTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForaSoftEvaluationTest/Pods-ForaSoftEvaluationTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				839CA9F02015552600930C68 /* AlbumCollectionVC.swift */,
 				8365A59D20189DBC0011FACA /* AlbumDetailTableVC.swift */,
 				83D04310201F42180036EAC5 /* JSONResponseParser.swift */,
+				83BFD8D920358C7900CAF97E /* NetworkManager.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -100,7 +103,7 @@
 			children = (
 				83E65A0A2017A01D003078AE /* AlbumCell.swift */,
 				83D04304201E74370036EAC5 /* AlbumDetailCell.swift */,
-				83D04306201E74530036EAC5 /* songCell.swift */,
+				83D04306201E74530036EAC5 /* SongCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -108,6 +111,7 @@
 		83D04309201F35B00036EAC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83D04308201E745E0036EAC5 /* Cells */,
 				839CA9E2201516FD00930C68 /* Main.storyboard */,
 			);
 			name = View;
@@ -116,10 +120,9 @@
 		83E65A0C2017A03A003078AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				83D0430A201F3FC70036EAC5 /* albumDetailInfo.swift */,
-				83D0430C201F412C0036EAC5 /* singleTrack.swift */,
-				830FEFED201FB38700CA0D2E /* albumBasicInfo.swift */,
-				83D04308201E745E0036EAC5 /* Cells */,
+				83D0430A201F3FC70036EAC5 /* AlbumDetailInfo.swift */,
+				83D0430C201F412C0036EAC5 /* SingleTrack.swift */,
+				830FEFED201FB38700CA0D2E /* AlbumBasicInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -249,10 +252,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ForaSoftEvaluationTest/Pods-ForaSoftEvaluationTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -284,15 +289,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83D0430B201F3FC70036EAC5 /* albumDetailInfo.swift in Sources */,
-				830FEFEE201FB38700CA0D2E /* albumBasicInfo.swift in Sources */,
-				83D0430D201F412C0036EAC5 /* singleTrack.swift in Sources */,
+				83D0430B201F3FC70036EAC5 /* AlbumDetailInfo.swift in Sources */,
+				830FEFEE201FB38700CA0D2E /* AlbumBasicInfo.swift in Sources */,
+				83D0430D201F412C0036EAC5 /* SingleTrack.swift in Sources */,
 				83D04311201F42180036EAC5 /* JSONResponseParser.swift in Sources */,
 				8365A59E20189DBC0011FACA /* AlbumDetailTableVC.swift in Sources */,
 				839CA9F12015552600930C68 /* AlbumCollectionVC.swift in Sources */,
 				839CA9DF201516FD00930C68 /* AppDelegate.swift in Sources */,
-				83D04307201E74530036EAC5 /* songCell.swift in Sources */,
+				83D04307201E74530036EAC5 /* SongCell.swift in Sources */,
 				83D04305201E74370036EAC5 /* AlbumDetailCell.swift in Sources */,
+				83BFD8DA20358C7900CAF97E /* NetworkManager.swift in Sources */,
 				83E65A0B2017A01D003078AE /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

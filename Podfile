@@ -7,6 +7,7 @@ target 'ForaSoftEvaluationTest' do
 
   # Pods for ForaSoftEvaluationTest
 	pod 'Alamofire', '~> 4.5'
+	pod 'AlamofireImage', '~> 3.3'
 	
 
 end

@@ -1,5 +1,5 @@
 //
-//  singleTrack.swift
+//  albumDetailInfo.swift
 //  ForaSoftEvaluationTest
 //
 //  Created by Danil on 29.01.18.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-struct singleTrack {
+struct AlbumDetailInfo {
     
-    var trackName = ""
-    var trackLength = ""
+    public var genre = ""
+    public var price = ""
 }

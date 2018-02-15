@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct albumBasicInfo {
+struct AlbumBasicInfo {
     
      var artBookURL = ""
      var artistName = ""

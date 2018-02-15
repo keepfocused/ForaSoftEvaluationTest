@@ -10,17 +10,19 @@ import UIKit
 
 class JSONResponseParser: NSObject {
     
-    public func perfromDetailInfoParse (responseData:Data?) -> (Array<singleTrack>, albumDetailInfo)
+   public static let sharedInstance = JSONResponseParser()
+    
+    public func perfromDetailInfoParse (responseData:Data?) -> (Array<SingleTrack>, AlbumDetailInfo)
     {
-        var resultArray = [singleTrack]()
-        var resultDetailInfo = albumDetailInfo()
+        var resultArray = [SingleTrack]()
+        var resultDetailInfo = AlbumDetailInfo()
         
         do {
             if let data = responseData,
                 let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
                 let attributes = json["results"] as? [[String: Any]] {
                 for attribute in attributes {
-                    var track:singleTrack = singleTrack()
+                    var track:SingleTrack = SingleTrack()
                     if let trackName = attribute["trackName"] as? String {
                         track.trackName = trackName
                     }
@@ -47,10 +49,10 @@ class JSONResponseParser: NSObject {
         return (resultArray, resultDetailInfo)
     }
     
-    public func performBasicAlbumParse (responseData:Data?) -> Array<albumBasicInfo>
+    public func performBasicAlbumParse (responseData:Data?) -> Array<AlbumBasicInfo>
     {
-
-        var albumsDataCollection = [albumBasicInfo]()
+        
+        var albumsDataCollection = [AlbumBasicInfo]()
         
         do {
             if let data = responseData,
@@ -58,7 +60,7 @@ class JSONResponseParser: NSObject {
                 let attributes = json["results"] as? [[String: Any]] {
                 for attribute in attributes {
                     
-                    var basicAlbumData = albumBasicInfo()
+                    var basicAlbumData = AlbumBasicInfo()
                     
                     if let imageURL = attribute["artworkUrl100"] as? String {
                         basicAlbumData.artBookURL = imageURL

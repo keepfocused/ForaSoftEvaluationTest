@@ -11,10 +11,10 @@ import Alamofire
 
 class AlbumDetailTableVC: UITableViewController {
     
-    public var basicInfo = albumBasicInfo()
-    private var detailInfo = albumDetailInfo()
+    public var basicInfo = AlbumBasicInfo()
+    private var detailInfo = AlbumDetailInfo()
     
-    private var songs = [singleTrack]()
+    private var songs = [SingleTrack]()
     
     
     //MARK: Life cycle
@@ -22,39 +22,35 @@ class AlbumDetailTableVC: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        
         let albumId = self.basicInfo.albumId
         
-        Alamofire.request("https://itunes.apple.com/lookup?id=\(albumId)&entity=song").responseJSON(){(data) in
+        NetworkManager.sharedInstance.getDetailInfoByAlbumId(albumId: albumId, completion: { (data) in
             
-            let json:Data? = data.data
+            let json = data!
             
-            let parser = JSONResponseParser()
-            
-            let (tracksArray, parsedDetailData) = parser.perfromDetailInfoParse(responseData: json)
+            let (tracksArray, parsedDetailData) = JSONResponseParser.sharedInstance.perfromDetailInfoParse(responseData: json)
             
             self.songs = tracksArray
             self.detailInfo = parsedDetailData
             
             self.tableView.reloadData()
             
-        }
-
+        })
     }
-
-
+    
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch section {
@@ -67,17 +63,17 @@ class AlbumDetailTableVC: UITableViewController {
         }
     }
     
-   private let  albumImageIdentifier =  "albumImage"
-   private let albumInfoIdentifier =    "albumInfo"
-   private let songIdentifier =         "song"
-
+    private let  albumImageIdentifier =  "albumImage"
+    private let albumInfoIdentifier =    "albumInfo"
+    private let songIdentifier =         "song"
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         //Configure cell
         
         switch indexPath.section {
-           
+            
         case 0:
             let detailCell = tableView.dequeueReusableCell(withIdentifier: self.albumInfoIdentifier, for: indexPath) as! AlbumDetailCell
             detailCell.albumNameLabel.text = self.basicInfo.albumName
@@ -87,10 +83,10 @@ class AlbumDetailTableVC: UITableViewController {
             detailCell.genreLabel.text = self.detailInfo.genre
             
             return detailCell
-
+            
             
         case 1:
-            let songCell = tableView.dequeueReusableCell(withIdentifier: self.songIdentifier, for: indexPath) as! songCell
+            let songCell = tableView.dequeueReusableCell(withIdentifier: self.songIdentifier, for: indexPath) as! SongCell
             let track = self.songs[indexPath.row]
             songCell.trackNameLabel?.text = track.trackName
             songCell.numberOfTrackLabel.text = String(indexPath.row + 1)
@@ -100,17 +96,18 @@ class AlbumDetailTableVC: UITableViewController {
             
         }
         
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "")!
         return cell
     }
     
     // MARK: Table view delegate
     
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch indexPath.section {
- 
+            
         case 0:
             return 228
         case 1:
@@ -120,6 +117,4 @@ class AlbumDetailTableVC: UITableViewController {
         }
         return 1
     }
-
-
 }
